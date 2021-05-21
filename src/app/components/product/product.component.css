@@ -1,0 +1,8 @@
+.card {
+  max-width: 400px;
+}
+
+.badge {
+  align-self: center;
+  padding: 10px;
+}
