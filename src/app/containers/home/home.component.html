@@ -1,50 +1,9 @@
 <div class="home__container py-5">
   <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
-  ></app-product>
-
-  <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
-  ></app-product>
-
-  <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
-  ></app-product>
-
-  <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
-  ></app-product>
-
-  <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
-  ></app-product>
-
-  <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
-  ></app-product>
-
-  <app-product
-    productName="Product 1"
-    productDescription="this is a description for this product yaayayayaaa"
-    productImg="https://via.placeholder.com/150"
-    productPrice="450"
+    *ngFor="let product of products"
+    [productName]="product.title"
+    [productDescription]="product.details"
+    [productImg]="product.photo"
+    [productPrice]="product.price"
   ></app-product>
 </div>

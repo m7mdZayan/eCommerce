@@ -6,3 +6,7 @@
   align-self: center;
   padding: 10px;
 }
+
+.card-img-top {
+  height: 280px;
+}
