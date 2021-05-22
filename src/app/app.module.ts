@@ -11,6 +11,7 @@ import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginNavComponent } from './components/login-nav/login-nav.component';
 
 const routes: Routes = []; // sets up routes constant where you define your routes
 
@@ -23,14 +24,9 @@ const routes: Routes = []; // sets up routes constant where you define your rout
     ProductComponent,
     LoginComponent,
     RegisterComponent,
+    LoginNavComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-  ],
-  exports: [RouterModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
