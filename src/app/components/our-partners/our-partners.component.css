@@ -1,0 +1,22 @@
+.the-chefs {
+  padding-top: 10em;
+  padding-bottom: 10em;
+}
+h2 {
+  font-size: 50px;
+  color: #000;
+  font-family: "Playfair Display", serif;
+}
+#partners img {
+  border-radius: 50%;
+  width: 200px;
+}
+#partners .partner-name {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+
+#partners .partner-description {
+  color: #808080;
+  font-weight: 300;
+}
