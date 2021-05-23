@@ -1,13 +1,13 @@
 <div class="card">
-  <img [src]="productImg" class="card-img-top" alt="product image" />
+  <img [src]="product.photo" class="card-img-top" alt="product image" />
   <div class="card-body">
-    <h5 class="card-title">{{ productName }}</h5>
+    <h5 class="card-title">{{ product.title }}</h5>
     <p class="card-text">
-      {{ productDescription }}
+      {{ product.details }}
     </p>
     <div class="d-flex justify-content-between">
       <a href="#" class="btn btn-success">Add to Cart</a>
-      <span class="badge bg-info text-dark">{{ productPrice }} EGP</span>
+      <span class="badge bg-info text-dark">{{ product.price }} EGP</span>
     </div>
   </div>
 </div>

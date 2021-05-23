@@ -1,9 +1,6 @@
 <div class="home__container py-5">
   <app-product
     *ngFor="let product of products"
-    [productName]="product.title"
-    [productDescription]="product.details"
-    [productImg]="product.photo"
-    [productPrice]="product.price"
+    [product]="product"
   ></app-product>
 </div>
