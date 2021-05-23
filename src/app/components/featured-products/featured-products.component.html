@@ -1,0 +1,104 @@
+<div class="container-fluid mb-5    pb-5" id="featureFood">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="featureFood-title text-center p5">
+            SHOPIFY Online Store
+          <div class="d-block featureFood-title-subtitle mt-4">
+            Find your favorite products
+          </div>
+        </h2>
+
+      </div>
+
+      <div class="col-12">
+        <div class="row">
+          <div class="col-8 col">
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <!-- ngfor for the first 2 elements-->
+                  <ng-template ngFor let-item [ngForOf]="featured" let-i="index">
+                    <div *ngIf="i < 2" class="col-md-12 col featureFood-item">
+                      <div class="row" *ngIf="i % 2 != 0">
+                        <div class="col-md-6 text-center   bg-white ">
+                          <div class="flex-column d-flex align-content-center justify-content-center h-100 ">
+
+                            <h3>
+                              {{item.name}}
+                            </h3>
+                            <h4 class="text-uppercase">
+                              {{item.subTitle}}
+                            </h4>
+
+                            <div class="featureFood-item-descriptin">
+                              {{item.description}}
+                            </div>
+                            <a class="text-uppercase">Learn mode => </a>
+                          </div>
+                        </div>
+                        <div class="col-md-6 featuredFood-item-img-wrapper"
+                             style="background-image: url({{item.picture}});">
+                        </div>
+                      </div>
+                      <div class="row" *ngIf="i % 2 == 0">
+                        <div class="col-md-6  featuredFood-item-img-wrapper"
+                             style="background-image: url({{item.picture}});">
+                        </div>
+                        <div class="col-md-6 text-center bg-white ">
+                          <div class="flex-column d-flex align-content-center justify-content-center h-100 ">
+
+                            <h3>
+                              {{item.name}}
+                            </h3>
+                            <h4>
+                              {{item.subTitle}}
+                            </h4>
+
+                            <div class="featureFood-item-descriptin">
+                              {{item.description}}
+                            </div>
+                            <a class="text-uppercase">Learn mode => </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 col">
+
+            <ng-template ngFor let-item [ngForOf]="featured" let-i="index">
+              <div *ngIf="i > 1" class="featureFood-item">
+                <div class="row">
+                  <div class="col-md-12 featuredFood-item-img-wrapper" style="background-image: url({{item.picture}});"></div>
+                  <div class="col-md-12 text-center bg-white ">
+                    <div class="flex-column d-flex align-content-center justify-content-center h-400 ">
+                      <h3>
+                        {{item.name}}
+                      </h3>
+                      <h4>
+                        {{item.subTitle}}
+                      </h4>
+
+                      <div class="featureFood-item-descriptin">
+                        {{item.description}}
+                      </div>
+                      <a class="text-uppercase">Learn mode => </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

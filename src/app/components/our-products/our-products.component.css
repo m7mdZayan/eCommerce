@@ -1,0 +1,37 @@
+#outProducts {
+  background-color: #f8f9fa;
+  padding: 10em 0;
+  font-family: "Playfair Display", serif;
+}
+ h2 {
+  font-size: 2em;
+}
+ h3 {
+  font-size: 20px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 100;
+}
+
+
+.product-container .product-item {
+  border-bottom: 1px dotted #000;
+  padding: 2em 0;
+}
+.product-container .product-item img {
+  width: 100px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  margin-right: 30px;
+}
+.product-container .product-item h3 a {
+  color: #000;
+  transition: 0.3s all ease;
+  color: green;
+}
+.price {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ff7a5c;
+  font-size: 20px;
+}
