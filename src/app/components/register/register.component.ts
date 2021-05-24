@@ -29,10 +29,12 @@ export class RegisterComponent implements OnInit {
   submit(): void {
     console.log('this.form.getRawValue() = ', this.form.getRawValue());
     this.http
-      .post('http://127.0.0.1:3000/api/users/signup', this.form.getRawValue())
+      .post('http://127.0.0.1:3000/api/users/signup', this.form.getRawValue(), {
+        withCredentials: true,
+      })
       .subscribe((res) => {
         console.log(res);
-        this.router.navigate(['/login']);
+        this.router.navigate(['']);
       });
   }
 }
