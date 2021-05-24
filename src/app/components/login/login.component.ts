@@ -31,8 +31,7 @@ export class LoginComponent implements OnInit {
         withCredentials: true,
       })
       .subscribe((res: any) => {
-        console.log(res);
-        console.log('res.data.user = ', res.data.user);
+        // console.log('user = ', res.data.user);
         Emitters.userEmitter.emit(res.data.user);
         this.router.navigate(['']);
       });

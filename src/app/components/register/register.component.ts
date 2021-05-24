@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Emitters } from 'src/app/emitters/emitters';
 
 @Component({
   selector: 'app-register',
@@ -32,8 +33,9 @@ export class RegisterComponent implements OnInit {
       .post('http://127.0.0.1:3000/api/users/signup', this.form.getRawValue(), {
         withCredentials: true,
       })
-      .subscribe((res) => {
-        console.log(res);
+      .subscribe((res: any) => {
+        // console.log('user = ', res.data.user);
+        Emitters.userEmitter.emit(res.data.user);
         this.router.navigate(['']);
       });
   }

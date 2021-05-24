@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     Emitters.userEmitter.subscribe((user: any) => {
-      console.log('user in nav = ', user);
       this.userName = user.name;
       this.userExist = true;
     });
@@ -30,7 +29,7 @@ export class NavbarComponent implements OnInit {
       })
       .subscribe(() => {
         this.userExist = false;
-        this.router.navigate(['login']);
+        // this.router.navigate(['login']);
       });
   }
 }

@@ -11,7 +11,6 @@ import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { LoginNavComponent } from './components/login-nav/login-nav.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,7 +23,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductComponent,
     LoginComponent,
     RegisterComponent,
-    LoginNavComponent,
     PageNotFoundComponent,
   ],
   imports: [
