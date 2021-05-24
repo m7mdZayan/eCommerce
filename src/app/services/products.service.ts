@@ -7,11 +7,11 @@ import { Product } from '../Product';
   providedIn: 'root',
 })
 export class ProductsService {
-  private apiUrl = 'http://localhost:3000/api/products';
+  private apiUrl = 'http://127.0.0.1:3000/api/products';
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<Product> {
-    return this.http.get<Product>(this.apiUrl);
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.apiUrl, { withCredentials: true });
   }
 }
