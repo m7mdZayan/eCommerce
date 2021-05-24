@@ -14,6 +14,8 @@ import { SocialFeedComponent } from './components/social-feed/social-feed.compon
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurProductsComponent } from './components/our-products/our-products.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { MenuComponent } from './components/menu/menu.component';
     OurPartnersComponent,
     OurProductsComponent,
     MenuComponent,
+    CartComponent,
+    ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
