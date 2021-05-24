@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Emitters } from 'src/app/emitters/emitters';
 
 @Component({
   selector: 'app-login',
@@ -29,8 +30,10 @@ export class LoginComponent implements OnInit {
       .post('http://127.0.0.1:3000/api/users/login', this.form.getRawValue(), {
         withCredentials: true,
       })
-      .subscribe((res) => {
+      .subscribe((res: any) => {
         console.log(res);
+        console.log('res.data.user = ', res.data.user);
+        Emitters.userEmitter.emit(res.data.user);
         this.router.navigate(['']);
       });
   }
