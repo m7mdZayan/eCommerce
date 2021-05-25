@@ -45,10 +45,17 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   checkout(){
-   
-    this.products = [];
-    this.totalPrice = 0;
-    // localStorage.removeItem("My_Shopping_Cart");
-    this.ordersService.clearData();
+    let grandTotal = this.totalPrice + 0.1 * this.totalPrice;
+    if(this.ordersService.getData().length == 0) alert("Your cart is empty!");
+    else{
+      this.ordersService.makeOrder(grandTotal).subscribe(
+        (res)=>{console.log(res); alert("Order has been sent successfully :)");},
+        (err)=>{console.log(err)}
+      );
+      this.products = [];
+      this.totalPrice = 0;
+      // localStorage.removeItem("My_Shopping_Cart");
+      this.ordersService.clearData();
+    }
   }
 }

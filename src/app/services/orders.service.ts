@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class OrdersService {
   private data:any = [];
   private dataInLocalStorage:any;
+  private apiUrl = 'http://localhost:3000/api/orders';
   
   constructor(private myClient:HttpClient) { }
 
@@ -42,6 +43,13 @@ export class OrdersService {
     // console.log(i);
   }
 
-
+  makeOrder(totalPrice:number){
+    let order = {
+      totalPrice: totalPrice,
+      products: this.getData(),
+      owner: null
+    }
+    return this.myClient.post(this.apiUrl, order);
+  }
   
 }
