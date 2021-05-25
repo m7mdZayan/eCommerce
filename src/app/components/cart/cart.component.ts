@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  products = [
+    {id:1, title:"sks", price:265}
+  ];
   constructor() { }
 
   ngOnInit(): void {

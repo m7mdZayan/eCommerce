@@ -16,6 +16,8 @@ import { OurProductsComponent } from './components/our-products/our-products.com
 import { MenuComponent } from './components/menu/menu.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ErrorComponent } from './components/error/error.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { OrdersService } from './services/orders.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import { ErrorComponent } from './components/error/error.component';
     MenuComponent,
     CartComponent,
     ErrorComponent,
+    ShoppingCartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [OrdersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

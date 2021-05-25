@@ -6,7 +6,7 @@
       {{ product.details }}
     </p>
     <div class="d-flex justify-content-between">
-      <a href="#" class="btn btn-success">Add to Cart</a>
+      <button class="btn btn-success" (click)="addToCart(product)">Add to Cart</button>
       <span class="badge bg-info text-dark">{{ product.price }} EGP</span>
     </div>
   </div>
