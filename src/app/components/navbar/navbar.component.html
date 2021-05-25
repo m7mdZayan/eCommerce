@@ -43,9 +43,32 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          [(ngModel)]="enteredValue"
         />
-        <button class="btn btn-outline-light" type="submit">Search</button>
+        <button
+          class="btn btn-outline-light"
+          type="submit"
+          (click)="searchData()"
+          >Search</button>
+         <p>{{matchedProduct | json }}</p>-->
       </form>
+    <!--
+      <div class="card" ng-show="!enteredValue.length">
+  <img [src]="matchedProduct.photo" class="card-img-top" alt="product image" />
+  <div class="card-body">
+    <h5 class="card-title">{{ matchedProduct.title }}</h5>
+    <p class="card-text">
+      {{ matchedProduct.details }}
+    </p>
+    <div class="d-flex justify-content-between">
+      <a href="#" class="btn btn-success">Add to Cart</a>
+      <span class="badge bg-info text-dark">{{ matchedProduct.price }} EGP</span>
+    </div>
+  </div>
+</div>
+
+-->
+
     </div>
   </div>
 </nav>

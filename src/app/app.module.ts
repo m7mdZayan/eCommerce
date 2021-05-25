@@ -14,6 +14,7 @@ import { SocialFeedComponent } from './components/social-feed/social-feed.compon
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurProductsComponent } from './components/our-products/our-products.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MenuComponent } from './components/menu/menu.component';
     OurProductsComponent,
     MenuComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
