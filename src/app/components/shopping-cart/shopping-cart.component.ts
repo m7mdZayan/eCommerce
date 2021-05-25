@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../services/orders.service';
+import { Product } from '../../Product';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -12,9 +13,8 @@ export class ShoppingCartComponent implements OnInit {
   // routeState:any;
 
   products;
-  totalPrice=0;
-
-  constructor(private router:Router, private ordersService:OrdersService) {
+  totalPrice=0
+  constructor(private ordersService:OrdersService) {
    
     // console.log(this.ordersService.getData());
     this.products = this.ordersService.getData();
@@ -28,21 +28,27 @@ export class ShoppingCartComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    for(let i=0; i<this.products.length;i++){
-      this.totalPrice += this.products[i].price;
-    }
+    this.getTotalPrice();
   }
 
   getTotalPrice(){
+    let totalPrice=0;
     for(let i=0; i<this.products.length;i++){
-      this.totalPrice += this.products[i].price;
+      totalPrice += this.products[i].price;
     }
+    this.totalPrice = totalPrice;
   }
+  deleteProduct(i:number){
+    this.ordersService.deleteProduct(i);
+    this.products = this.ordersService.getData();
+    this.getTotalPrice();
+  }
+
   checkout(){
+   
     this.products = [];
     this.totalPrice = 0;
     // localStorage.removeItem("My_Shopping_Cart");
     this.ordersService.clearData();
-
   }
 }

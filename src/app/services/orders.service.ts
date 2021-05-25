@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { Product } from '../Product';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
-  constructor() { }
   private data:any = [];
   private dataInLocalStorage:any;
- 
+  
+  constructor(private myClient:HttpClient) { }
 
   setData(data:any){
-      this.data = localStorage.getItem("My_Shopping_Cart");
-      if(this.data) this.data = JSON.parse(this.data);
-      else this.data = [];
+    
+      this.data = this.getData();
       this.data.push(data);
       localStorage.setItem("My_Shopping_Cart",JSON.stringify(this.data));
   }
@@ -33,5 +31,17 @@ export class OrdersService {
     this.data = [];
     localStorage.removeItem("My_Shopping_Cart");
   }
+
+  deleteProduct(i:number){
+    let allProducts = this.getData();
+    // let index = allProducts.findIndex((p: Product) => p==product);
+    allProducts.splice(i,1);
+    localStorage.setItem("My_Shopping_Cart",JSON.stringify(allProducts));
+    // console.log(allProducts);
+    // console.log(removed);
+    // console.log(i);
+  }
+
+
   
 }

@@ -26,7 +26,7 @@
                           </div>
                         </div>
                         </li>
-                          <li class="cart_item clearfix" *ngFor="let product of products">
+                          <li class="cart_item clearfix" *ngFor="let product of products; let i = index">
                             <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                               <div class="cart_item_image"><img [src]="product.photo" alt=""></div>
                                   <div class="cart_item_name cart_info_col">
@@ -38,8 +38,10 @@
                                   <div class="cart_item_price cart_info_col">
                                       <div class="cart_item_text">{{ product.price }}</div>
                                   </div>
-                                  <div class="cart_item_price cart_info_col">
-                                    <div class="cart_item_text">{{ product.price }}</div>
+                                  <div>
+                                    <button style="color: red;" class="mt-4 btn btn-light" (click)="deleteProduct(i)">
+                                      <mat-icon>delete</mat-icon>
+                                    </button>
                                 </div>
                               </div>
                           </li>                          

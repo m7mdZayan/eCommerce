@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrdersService } from './services/orders.service';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { OrdersService } from './services/orders.service';
     ErrorComponent,
     ShoppingCartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatIconModule],
   providers: [OrdersService],
   bootstrap: [AppComponent],
 })
