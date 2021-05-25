@@ -28,7 +28,6 @@ export class ProductComponent implements OnInit {
     //   }
     // });
     this.orderService.setData(product);
-    this.orderService.emitChange(product);
     // console.log("from add to cart" + product.title);
   }
 }

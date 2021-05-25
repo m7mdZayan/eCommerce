@@ -8,21 +8,27 @@ import { Product } from '../Product';
 export class OrdersService {
   constructor() { }
   private data:any = [];
-  private emitChangeSource = new Subject<any>();
-
-  changeEmitted$ = this.emitChangeSource.asObservable();
-
-  emitChange(product:Product){
-    // console.log(product.title);
-    this.emitChangeSource.next(product);
-  }
+  private dataInLocalStorage:any;
+ 
 
   setData(data:any){
       this.data.push(data);
+      localStorage.setItem("My_Shopping_Cart",JSON.stringify(this.data));
   }
 
   getData():any{
-      return this.data;
+    this.dataInLocalStorage = localStorage.getItem("My_Shopping_Cart");
+    // console.log(this.dataInLocalStorage);
+
+    if(this.dataInLocalStorage) this.dataInLocalStorage = JSON.parse(this.dataInLocalStorage);
+    else this.dataInLocalStorage = [];
+    // console.log(this.dataInLocalStorage);
+    return this.dataInLocalStorage;
+  }
+
+  clearData(){
+    this.data = [];
+    localStorage.removeItem("My_Shopping_Cart");
   }
   
 }
