@@ -12,6 +12,9 @@ export class OrdersService {
  
 
   setData(data:any){
+      this.data = localStorage.getItem("My_Shopping_Cart");
+      if(this.data) this.data = JSON.parse(this.data);
+      else this.data = [];
       this.data.push(data);
       localStorage.setItem("My_Shopping_Cart",JSON.stringify(this.data));
   }
