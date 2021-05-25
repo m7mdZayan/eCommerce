@@ -14,6 +14,9 @@ import { SocialFeedComponent } from './components/social-feed/social-feed.compon
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurProductsComponent } from './components/our-products/our-products.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,10 @@ import { MenuComponent } from './components/menu/menu.component';
     OurPartnersComponent,
     OurProductsComponent,
     MenuComponent,
+    ProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  // MatExpansionModule
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NoopAnimationsModule,MatExpansionModule],
   providers: [],
   bootstrap: [AppComponent],
 })
