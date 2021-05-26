@@ -1,18 +1,18 @@
-<div class="container">
+<div class="container" *ngIf="user ;else NoData">
     <div class="main-body">
-
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="User"
                                 class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4>John Doe</h4>
-                                <p class="text-secondary mb-1">More Info</p>
+                                <button class="btn btn-outline-primary">{{user.user.name}}</button>
+                                <!-- <h4>{{user.user.name}}</h4> -->
+                                <p class="text-secondary mb-1">{{user.user.role}}</p>
                                 <!-- <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p> -->
-                                <button class="btn btn-outline-primary">Edit Profile picture</button>
+                                <!-- <button class="btn btn-outline-primary">Edit Profile picture</button> -->
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                                 <h4 class="mb-3">Full Name</h4>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Kenneth Valdez
+                                {{user.user.name}}
                             </div>
                         </div>
                         <hr>
@@ -37,7 +37,7 @@
                                 <h4 class="mb-0">Email</h4>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                fip@jukmuh.al
+                                {{user.user.email}}
                             </div>
                         </div>
                         <hr>
@@ -46,7 +46,26 @@
                                 <h4 class="mb-0">Phone</h4>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                (239) 816-9029
+                                <!-- (239) 816-9029{{id}} -->
+                                (239) 816-{{id}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 class="mb-0">No of Orders</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{orders.length}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 class="mb-0">ID No</h4>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{id}}
                             </div>
                         </div>
                         <hr>
@@ -59,43 +78,62 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row gutters-sm">
-                    <mat-accordion multi> 
-                        <mat-expansion-panel hideToggle>
+                    <mat-accordion *ngIf="orders.length > 0">
+                        <mat-expansion-panel *ngFor="let order of orders; let i = index;">
                             <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    This is the expansion title
-                                </mat-panel-title>
+                                 <mat-panel-title>
+                                    Order No {{i+1}} Status
+                                    </mat-panel-title>
                                 <mat-panel-description>
-                                    This is a summary of the content
+                                    {{order.state}}
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
-                            <p>This is the primary content of the panel.</p>
-                        </mat-expansion-panel>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    This is the expansion title
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                    This is a summary of the content
-                                </mat-panel-description>
-                            </mat-expansion-panel-header>
-                            <p>This is the primary content of the panel.</p>
-                        </mat-expansion-panel><mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    This is the expansion title
-                                </mat-panel-title>
-                                <mat-panel-description>
-                                    This is a summary of the content
-                                </mat-panel-description>
-                            </mat-expansion-panel-header>
-                            <p>This is the primary content of the panel.</p>
-                        </mat-expansion-panel>
+                            <!-- <p>Number of Products : <span>{{order.products.length}}</span></p> -->
+                            <p>Order Date : <span>{{order.date}}</span></p>
+                            <p>Order Total Price : <span>{{order.totalPrice}}</span></p>
+                            
+
+
+
+                            <table class="table">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Details</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Image</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let product of products; let i = index;">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{product.title}}</td>
+                                    <td>{{product.details}}</td>
+                                    <td>{{product.amount}}</td>
+                                    <td>{{product.price}}</td>
+                                    <td><img src="{{product.photo}}" width="50px" height="50px"/></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+                              <!-- <tr *ngFor="let user of users"> 
+        <td><a routerLink="{{user.id}}">{{user.id}}</a></td>
+        <td>{{user.name}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address.city}}</td>
+        <td>{{user.address.street}}</td>
+        <td><a class="btn btn-primary m-2" routerLink="newuser">Update </a><a class="btn btn-danger m-2" (click)="OpenDelete(user)">Delete </a></td>
+      </tr> -->
+
+                        
+                            </mat-expansion-panel>
                     </mat-accordion>
-                              </div>
+                </div>
 
 
 
@@ -104,3 +142,10 @@
 
     </div>
 </div>
+<ng-template #NoData>
+    <div>
+        <h2>
+            Loading...
+        </h2>
+    </div>
+</ng-template>

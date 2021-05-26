@@ -17,6 +17,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { UserorderComponent } from './components/userorder/userorder.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     OurProductsComponent,
     MenuComponent,
     ProfileComponent,
+    UserorderComponent,
   ],
   // MatExpansionModule
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NoopAnimationsModule,MatExpansionModule],
