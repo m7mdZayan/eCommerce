@@ -14,10 +14,11 @@ export class UserService {
     return this.http.get(this.apiUrl+"/"+id)
   } 
 
-  getUserOrders(id:any, orderid:any){
-    return this.http.get(this.apiUrl+"/"+id+"/"+orderid)
-  } 
 
+  editUser(id:any,body:any){
+    return this.http.patch(this.apiUrl+"/"+id,body)
+  } 
+  
 }
 
 /**

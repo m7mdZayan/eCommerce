@@ -13,9 +13,13 @@ export class ProfileComponent implements OnInit {
   orderid:any;
   user:any;
   orders:any;
-  products:any;
+  // products:any;
   constructor(private myActivated : ActivatedRoute, private myService:UserService) { 
+    // this.id = this.myActivated.snapshot.params.id;
+    // this.orderid = this.myActivated.snapshot.params.orderid;
+    // console.log(this.id,this.orderid);
     this.id = this.myActivated.snapshot.params.id;
+    // this.orderid = this.myActivated.snapshot.params.orderid;
     console.log(this.id);
   }
 
@@ -24,10 +28,10 @@ export class ProfileComponent implements OnInit {
     // (res)=>{console.log(res)},
       (res)=>{this.user=(res); console.log(res);
         this.orders=this.user.user.orders;
-        this.orders.forEach((order:any) => {
-          this.products = order.products
-          // console.log(order.products);
-        });
+        // this.orders.forEach((order:any) => {
+        //   this.products = order.products
+        //   // console.log(order.products);
+        // });
        },
       (err)=>{console.log(err)}
     )

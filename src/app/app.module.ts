@@ -17,7 +17,9 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { UserorderComponent } from './components/userorder/userorder.component';
+import { UsereditComponent } from './components/useredit/useredit.component';
+import { UsercardComponent } from './components/usercard/usercard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { UserorderComponent } from './components/userorder/userorder.component';
     OurProductsComponent,
     MenuComponent,
     ProfileComponent,
-    UserorderComponent,
+    UsereditComponent,
+    UsercardComponent,
+    
   ],
   // MatExpansionModule
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NoopAnimationsModule,MatExpansionModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NoopAnimationsModule,MatExpansionModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
