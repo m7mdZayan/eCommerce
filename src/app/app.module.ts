@@ -18,6 +18,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrdersService } from './services/orders.service';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { OrdersService } from './services/orders.service';
     MenuComponent,
     ErrorComponent,
     ShoppingCartComponent,
+    LandingPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatIconModule],
   providers: [OrdersService],
