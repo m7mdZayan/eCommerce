@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +21,7 @@ import { DashboardHomeComponent } from './components/dashboard/dashboard-home/da
 import { NewProductComponent } from './components/dashboard/new-product/new-product.component';
 import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
 
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   declarations: [
@@ -37,8 +41,19 @@ import { EditProductComponent } from './components/dashboard/edit-product/edit-p
     EditProductComponent,
     
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  imports: [
+  
+    BrowserModule, 
+    AppRoutingModule, 
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+
+  ],
+  providers: [
+    ProductsService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
