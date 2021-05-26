@@ -14,6 +14,10 @@ import { SocialFeedComponent } from './components/social-feed/social-feed.compon
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurProductsComponent } from './components/our-products/our-products.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { DashboardHomeComponent } from './components/dashboard/dashboard-home/dashboard-home.component';
+import { NewProductComponent } from './components/dashboard/new-product/new-product.component';
+import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { MenuComponent } from './components/menu/menu.component';
     OurPartnersComponent,
     OurProductsComponent,
     MenuComponent,
+    DashboardHomeComponent,
+    NewProductComponent,
+    EditProductComponent,
+    
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
