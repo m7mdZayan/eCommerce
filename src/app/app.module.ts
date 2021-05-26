@@ -15,7 +15,6 @@ import { SocialFeedComponent } from './components/social-feed/social-feed.compon
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurProductsComponent } from './components/our-products/our-products.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { CartComponent } from './components/cart/cart.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrdersService } from './services/orders.service';
@@ -34,7 +33,6 @@ import { from } from 'rxjs';
     OurPartnersComponent,
     OurProductsComponent,
     MenuComponent,
-    CartComponent,
     ErrorComponent,
     ShoppingCartComponent,
   ],
