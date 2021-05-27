@@ -22,6 +22,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  id:string = "60a9bd6b6aa18d2e20b9e609";
+
   logout(): void {
     this.http
       .get('http://127.0.0.1:3000/api/users/logout', {

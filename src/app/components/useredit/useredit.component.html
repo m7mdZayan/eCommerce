@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row gutters">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+      <div class="card h-100">
+        <div class="card-body">
+
+          <app-usercard></app-usercard>
+
+          <div class="account-settings">
+            <div class="about">
+              <h3 class="text-primary">About</h3>
+              <p>It is available to Update your information in our eCommerce Now!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+      <form [formGroup]="editUser" (ngSubmit)="collection()">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <h3 class="mb-2 text-primary">Personal Details</h3>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Enter full name" formControlName="name"> 
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label for="eMail">Email</label>
+                <input type="email" class="form-control" id="eMail" placeholder="Enter email ID" formControlName="email">
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" formControlName="phone">
+              </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="form-group">
+                <label for="website">Ay 7agaaaaa</label>
+                <input type="url" class="form-control" id="website" placeholder="Website url" formControlName="address">
+              </div>
+            </div>
+          </div>
+          <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="text-right btns">
+                <button type="submit" id="submit" name="submit" class="btn btn-primary m-2">Update</button>
+                <button type="button" id="cancel" name="cancel" class="btn btn-secondary m-2" (click)="cancel()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form> 
+    </div>
+
+  </div>
+</div>

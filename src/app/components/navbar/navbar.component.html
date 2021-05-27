@@ -32,11 +32,9 @@
             {{ userName }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">myProfile</a></li>
-            <li>
-              <a class="dropdown-item" routerLink="login" (click)="logout()"
-                >logout</a
-              >
+            <li><a class="dropdown-item" routerLink="users/{{id}}">myProfile</a></li>
+            <!-- 60a9bd6b6aa18d2e20b9e609 -->
+             <li><a class="dropdown-item" routerLink="login" (click)="logout()">logout</a>
             </li>
           </ul>
         </li>
