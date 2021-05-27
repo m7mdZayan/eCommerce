@@ -12,17 +12,19 @@ export class NavbarComponent implements OnInit {
   // @Input() userName = '';
   userExist: boolean = false;
   userName = '';
-
+  id:string = '';
+  // id:string = "60a9bd6b6aa18d2e20b9e609";
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     Emitters.userEmitter.subscribe((user: any) => {
       this.userName = user.name;
       this.userExist = true;
+      this.id = user._id;
     });
   }
 
-  id:string = "60a9bd6b6aa18d2e20b9e609";
+  
 
   logout(): void {
     this.http
