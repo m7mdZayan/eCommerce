@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">eCommerce</a>
+    <a class="navbar-brand" routerLink="/">eCommerce</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+          <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Shopping Cart</a>
+        <li class="nav-item" *ngIf="userExist">
+          <a class="nav-link" routerLink="/shoppingCart">Shopping Cart<span class="badge bg-warning text-dark mx-2"> {{products.length}} </span> </a>
         </li>
         <li class="nav-item dropdown" *ngIf="userExist">
           <a
@@ -32,9 +32,9 @@
             {{ userName }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="users/{{id}}">myProfile</a></li>
+            <li><a class="dropdown-item" routerLink="/users/{{id}}">myProfile</a></li>
             <!-- 60a9bd6b6aa18d2e20b9e609 -->
-             <li><a class="dropdown-item" routerLink="login" (click)="logout()">logout</a>
+             <li><a class="dropdown-item" routerLink="/login" (click)="logout()">logout</a>
             </li>
           </ul>
         </li>
@@ -51,10 +51,10 @@
       <div *ngIf="!userExist">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" routerLink="login">Login</a>
+            <a class="nav-link active" routerLink="/login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="register">Register</a>
+            <a class="nav-link active" routerLink="/register">Register</a>
           </li>
         </ul>
       </div>

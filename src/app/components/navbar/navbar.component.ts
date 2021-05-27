@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
 import { Emitters } from 'src/app/emitters/emitters';
 import { Router } from '@angular/router';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,12 +14,16 @@ export class NavbarComponent implements OnInit {
   userExist: boolean = false;
   userName:any = '';
   id:any = '';
+  products:any;
   // id:string = "60a9bd6b6aa18d2e20b9e609";
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private ordersService:OrdersService) {
+    
+  }
 
   ngOnInit(): void {
     this.id = localStorage.getItem("user_id");
     this.userName = localStorage.getItem("user_name");
+    this.products = this.ordersService.getData();
     
     if(document.cookie){
       this.userExist = true;
@@ -31,6 +36,10 @@ export class NavbarComponent implements OnInit {
       localStorage.setItem("user_name",user.name);
     },
     (err) => console.log(err));
+
+    setInterval(()=>{
+      this.products = this.ordersService.getData();
+    },500)
   }
 
   
@@ -46,5 +55,6 @@ export class NavbarComponent implements OnInit {
       });
       localStorage.removeItem("user_id");
       localStorage.removeItem("user_name");
+      localStorage.removeItem("My_Shopping_Cart");
   }
 }
