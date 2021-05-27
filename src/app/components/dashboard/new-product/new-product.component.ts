@@ -28,13 +28,13 @@ export class NewProductComponent implements OnInit {
       photo:this.photo,
       amount: 5
     }
-    console.log('before');
+    
     this.productService.addNewProduct(product).subscribe(
       (res)=>{console.log(res)},
       (err)=>{console.log(err)},
     );
-    console.log('after');
-    //this.router.navigateByUrl('dashboard/products');
+    
+    this.router.navigateByUrl('dashboard/products');
   }
 } 
 

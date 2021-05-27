@@ -20,16 +20,8 @@ export class DashboardHomeComponent implements OnInit {
   deleteProduct(e: any, id: string) {
     e.preventDefault()
     this.productService.deleteProductById(id).subscribe(
-        (data: any) => {
-            if (data.ok) {
-                this.products = this.products.filter((product: any) => {
-                    return product._id !== id
-                })
-            }
-        },
-        (err) => {
-            console.log(err)
-        }
+      ()=>{ this.ngOnInit() },
+      (err) => {console.log(err)}
     )
   }
 

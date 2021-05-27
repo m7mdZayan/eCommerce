@@ -26,7 +26,7 @@ export class ProductsService {
     return this.http.delete(this.apiUrl+'/'+id);
   }
   updateProductById(id:any,product:any){
-    return this.http.put(this.apiUrl+'/'+id,product);
+    return this.http.patch(this.apiUrl+'/'+id , product);
   }
 
 }

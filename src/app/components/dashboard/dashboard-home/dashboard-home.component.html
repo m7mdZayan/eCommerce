@@ -40,8 +40,8 @@
                         <td>{{ product.title }}</td>
                         <td>{{ product.price }}</td>
                         <td>
-                            <a routerLink="" class="btn btn-secondary btn-sm mr-1" href="#"> Edit </a> &nbsp;
-                            <a class="btn btn-warning btn-sm" href="#"> Delete </a>
+                            <a routerLink="/dashboard/products/{{product._id}}/edit" class="btn btn-secondary btn-sm mr-1" href="#"> Edit </a> &nbsp;
+                            <a class="btn btn-warning btn-sm" href="#"(click)="deleteProduct($event, product._id)"> Delete </a>
                         </td>
                     </tr>
                 </tbody>
