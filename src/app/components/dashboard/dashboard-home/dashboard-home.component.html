@@ -1,86 +1,111 @@
-<div class="admin-sidebar">
-    <div class="logo">
-        <img src="/assets/logo.png" />
-    </div>
-    <div class="links">
-        <ul>
-            <li>
-                <a routerLink="/dashboard"><i class="fa fa-home "></i> Dashboard</a>
-            </li>
-            <li>
-                <a routerLink="/products"><i class="fa fa-product-hunt"></i> Products</a>
-            </li>
-            <li>
-                <a routerLink="/orders"><i class="fa fa-shopping-cart"></i> Orders</a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-
-<p class="text-center mt-5">
-    <button class="btn btn-success text-center" routerLink="/dashboard/products/new"> New Product  </button>
-</p>
-<h2 class="text-center">All Products</h2>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-info table-bordered text-center">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Controls</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let product of products; index as i" >
-                        <td>{{ i + 1}}</td>
-                        <td>{{ product.title }}</td>
-                        <td>{{ product.price }}</td>
-                        <td>
-                            <a routerLink="/dashboard/products/{{product._id}}/edit" class="btn btn-secondary btn-sm mr-1" href="#"> Edit </a> &nbsp;
-                            <a class="btn btn-warning btn-sm" href="#"(click)="deleteProduct($event, product._id)"> Delete </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    
+    <div class="admin-sidebar">
+        <div class="logo">
+            <img src="/assets/logo.png" />
+        </div>
+        <div class="links">
+            <ul>
+                <li>
+                    <a routerLink="/dashboard"><i class="fa fa-home "></i> Dashboard</a>
+                </li>
+                <li>
+                    <a routerLink="/products"><i class="fa fa-product-hunt"></i> Products</a>
+                </li>
+                <li>
+                    <a routerLink="/orders"><i class="fa fa-shopping-cart "></i> Orders</a>
+                </li>
+            </ul>
+        </div>
+    </div><br><br>
+
+    <div class="d-flex justify-content-around" > 
+        <div class="bg-gradient text-success  text-center" *ngFor="let o of totalOrders">
+            <i class="fa fa-shopping-basket fa-5x "></i>
+            <h1> {{ o.orderCount }} Orders</h1>
+            
+        </div>
+        <div class="bg-gradient text-success  text-center" *ngFor="let p of productCount">
+            <i class="fa fa-product-hunt fa-5x"></i>
+            <h1> {{ p.count }} Products</h1>
+        </div>
+        <div class="bg-gradient text-success  text-center" *ngFor="let u of userCount">
+            <i class="fa fa-user fa-5x"></i>
+            <h1>{{ u.count }} Users</h1>
+        </div >
+        <div class="bg-gradient text-success  text-center" *ngFor="let s of salesOrders">
+            <i class="fa fa-money fa-5x"></i>
+            <h1>{{ s.totalsales }} &#36; Sales</h1>
         </div>
     </div>
-</div>
-
-
-<h2 class="text-center">All Orders</h2>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-warning table-bordered text-center">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">View</th>
-                        <th scope="col">Update</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr  >
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button class="btn btn-info" >view</button></td>
-                        <td><button href="#"class="btn btn-primary">update</button></td>
-                        <td> <button href="#"class="btn btn-danger">delete</button></td>
-                    </tr>
-                </tbody>
-            </table>
+    
+    
+    <p class="text-center mt-5">
+        <button class="btn btn-success text-center" routerLink="/dashboard/products/new"> New Product  </button>
+    </p>
+    <h2 class="text-center">All Products</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-info table-bordered text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Controls</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products; index as i" >
+                            <td>{{ i + 1}}</td>
+                            <td>{{ product.title }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>
+                                <a routerLink="/dashboard/products/{{product._id}}/edit" class="btn btn-secondary btn-sm mr-1" href="#"> Edit </a> &nbsp;
+                                <a class="btn btn-warning btn-sm" href="#"(click)="deleteProduct($event, product._id)"> Delete </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    
+    
+    <h2 class="text-center">All Orders</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-warning table-bordered text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">View</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  >
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button class="btn btn-info" >view</button></td>
+                            <td><button href="#"class="btn btn-primary">update</button></td>
+                            <td> <button href="#"class="btn btn-danger">delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 
 

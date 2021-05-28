@@ -28,5 +28,8 @@ export class ProductsService {
   updateProductById(id:any,product:any){
     return this.http.patch(this.apiUrl+'/'+id , product);
   }
+  getProductCount(){
+    return this.http.get(this.apiUrl+'/get/count');
+  }
 
 }

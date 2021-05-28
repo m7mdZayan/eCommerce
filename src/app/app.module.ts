@@ -22,6 +22,9 @@ import { NewProductComponent } from './components/dashboard/new-product/new-prod
 import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
 
 import { ProductsService } from './services/products.service';
+import { UserService } from './services/user/user.service';
+import { OrdersService } from './services/orders.service';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,6 @@ import { ProductsService } from './services/products.service';
     
   ],
   imports: [
-  
     BrowserModule, 
     AppRoutingModule, 
     HttpClientModule,
@@ -53,6 +55,8 @@ import { ProductsService } from './services/products.service';
   ],
   providers: [
     ProductsService,
+    UserService,
+    OrdersService
   ],
   bootstrap: [AppComponent],
 })
