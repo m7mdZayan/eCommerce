@@ -9,6 +9,7 @@ export class OrdersService {
   private dataInLocalStorage:any;
   private apiUrl = 'http://127.0.0.1:3000/api/orders';
   
+  
   constructor(private myClient:HttpClient) { }
 
   setData(data:any){
@@ -43,6 +44,13 @@ export class OrdersService {
       owner: localStorage.getItem("user_id")
     }
     return this.myClient.post(this.apiUrl, order, {withCredentials: true});
+  }
+
+  getOrderTotal(){
+    return this.myClient.get(this.apiUrl+'/get/count');
+  }
+  getOrderSales(){
+    return this.myClient.get(this.apiUrl+'/get/totalsales');
   }
   
 }

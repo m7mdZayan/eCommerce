@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../Product';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -14,4 +15,24 @@ export class ProductsService {
   getProducts(): Observable<any> {
     return this.http.get<any>(this.apiUrl, { withCredentials: true });
   }
+  // getProducts() {
+  //   return this.http.get(this.apiUrl);
+  // }
+  
+  getProductById(id: any){
+    return this.http.get(this.apiUrl+'/'+id);
+  }
+  addNewProduct(product: any){
+    return this.http.post(this.apiUrl+`/create`,product);
+  }
+  deleteProductById(id: any){
+    return this.http.delete(this.apiUrl+'/'+id);
+  }
+  updateProductById(id:any,product:any){
+    return this.http.patch(this.apiUrl+'/'+id , product);
+  }
+  getProductCount(){
+    return this.http.get(this.apiUrl+'/get/count', { withCredentials: true });
+  }
+
 }

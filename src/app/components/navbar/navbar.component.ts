@@ -12,6 +12,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 export class NavbarComponent implements OnInit {
   // @Input() userName = '';
   userExist: boolean = false;
+  isAdmin:any = '';
   userName:any = '';
   id:any = '';
   products:any;
@@ -23,6 +24,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem("user_id");
     this.userName = localStorage.getItem("user_name");
+    this.isAdmin = localStorage.getItem("user_role") == 'admin' ? true : false;
+
     this.products = this.ordersService.getData();
     
     if(document.cookie){
@@ -34,6 +37,7 @@ export class NavbarComponent implements OnInit {
       this.id = user._id;
       localStorage.setItem("user_id",user._id);
       localStorage.setItem("user_name",user.name);
+      localStorage.setItem("user_role",user.role);
     },
     (err) => console.log(err));
 
@@ -55,6 +59,7 @@ export class NavbarComponent implements OnInit {
       });
       localStorage.removeItem("user_id");
       localStorage.removeItem("user_name");
+      localStorage.removeItem("user_role");
       localStorage.removeItem("My_Shopping_Cart");
   }
 }

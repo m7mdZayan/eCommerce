@@ -20,6 +20,9 @@
         <li class="nav-item" *ngIf="userExist">
           <a class="nav-link" routerLink="/shoppingCart">Shopping Cart<span class="badge bg-warning text-dark mx-2"> {{products.length}} </span> </a>
         </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" routerLink="/dashboard/products">Dashboard </a>
+        </li>
         <li class="nav-item dropdown" *ngIf="userExist">
           <a
             class="nav-link dropdown-toggle"

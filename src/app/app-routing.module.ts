@@ -9,6 +9,9 @@ import { UsereditComponent } from './components/useredit/useredit.component';
 import { ErrorComponent } from './components/error/error.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { DashboardHomeComponent } from './components/dashboard/dashboard-home/dashboard-home.component';
+import { NewProductComponent } from './components/dashboard/new-product/new-product.component';
+import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
 
 
 const routes: Routes = [
@@ -19,6 +22,9 @@ const routes: Routes = [
   {path:'shoppingCart', component:ShoppingCartComponent},
   {path:'users/:id', component:ProfileComponent},
   {path:'users/:id/useredit', component:UsereditComponent},
+  {path: 'dashboard/products', component: DashboardHomeComponent},
+  {path: 'dashboard/products/new', component: NewProductComponent },
+  {path: 'dashboard/products/:id/edit', component:EditProductComponent },
 
   {path:"**", component:ErrorComponent}, // Wildcard route for a 404 page,
 ]; // sets up routes constant where you define your routes
@@ -26,5 +32,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+
 })
+
 export class AppRoutingModule {}

@@ -18,26 +18,9 @@ export class UserService {
   editUser(id:any,body:any){
     return this.http.patch(this.apiUrl+"/"+id,body)
   } 
+
+  getUserCount(){
+    return this.http.get(this.apiUrl+'/get/count');
+  }
   
 }
-
-/**
- * 
-  getAllUsers(){
-    return this.myClient.get(this.baseURL);
-    }
-  
-  getUserById(id:any){
-    return this.myClient.get(this.baseURL+"/"+id)
-  }
-
-  AddNewUser(user:any){
-    return this.myClient.post(this.baseURL, user);
-  }
-
-  DeleteUserById(id:any){
-    return this.myClient.delete(this.baseURL+"/"+id);
-  }
-
-}
- */

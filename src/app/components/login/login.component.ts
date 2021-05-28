@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       .subscribe((res: any) => {
         // console.log('user = ', res.data.user);
         Emitters.userEmitter.emit(res.data.user);
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
       });
   }
 }
