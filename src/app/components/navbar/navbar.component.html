@@ -48,8 +48,14 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          [(ngModel)]="enteredValue"
         />
-        <button class="btn btn-outline-light" type="submit">Search</button>
+        <button
+          class="btn btn-outline-light"
+          type="submit"
+          (click)="searchData()"
+          >Search</button>
+         <p>{{matchedProduct | json }}</p>-->
       </form>
       <div *ngIf="!userExist">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
